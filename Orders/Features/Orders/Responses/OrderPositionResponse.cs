@@ -1,4 +1,5 @@
-﻿using Orders.Domain.Orders;
+﻿using System.Text.Json.Serialization;
+using Orders.Domain.Orders;
 using Orders.Features.Products.Responses;
 
 namespace Orders.Features.Orders.Responses
@@ -11,8 +12,10 @@ namespace Orders.Features.Orders.Responses
             Count = orderPositionDto.Count;
         }
 
+        [JsonPropertyName("product")]
         public ProductResponse Product { get; }
 
+        [JsonPropertyName("count")]
         public int Count { get; }
     }
 }
